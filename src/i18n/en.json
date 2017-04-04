@@ -32,7 +32,9 @@
     "is_empty": "is empty",
     "is_not_empty": "is not empty",
     "is_null": "is null",
-    "is_not_null": "is not null"
+    "is_not_null": "is not null",
+    "in_last_x_days": "is within the last x days",
+    "not_in_last_x_days": "is not within the last x days"
   },
 
   "errors": {

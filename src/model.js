@@ -556,6 +556,14 @@ var Rule = function(parent, $el) {
      * @instance
      */
     this.__.value = undefined;
+
+    /**
+     * @name input_type
+     * @member {*}
+     * @memberof Rule
+     * @instance
+     */
+    this.__.input_type = null;
 };
 
 Rule.prototype = Object.create(Node.prototype);

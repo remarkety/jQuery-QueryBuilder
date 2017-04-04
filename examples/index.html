@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
   <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css">
   <link rel="stylesheet" href="bower_components/selectize/dist/css/selectize.bootstrap3.css">
+  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 
   <link rel="stylesheet" href="../dist/css/query-builder.default.css" id="qb-theme">
 
@@ -123,6 +124,8 @@
 <script src="../bower_components/sql-parser/browser/sql-parser.js"></script>
 <script src="../bower_components/doT/doT.js"></script>
 <script src="../bower_components/interact/interact.js"></script>
+<script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
 <!-- <script src="../dist/js/query-builder.js"></script> -->
 <!-- injector:js -->
@@ -143,6 +146,8 @@
 <script src="../src/plugins/invert/plugin.js"></script>
 <script src="../src/plugins/mongodb-support/plugin.js"></script>
 <script src="../src/plugins/not-group/plugin.js"></script>
+<script src="../src/plugins/readable-json/plugin.js"></script>
+<script src="../src/plugins/rm-datepicker/plugin.js"></script>
 <script src="../src/plugins/sortable/plugin.js"></script>
 <script src="../src/plugins/sql-support/plugin.js"></script>
 <script src="../src/plugins/unique-filter/plugin.js"></script>
@@ -175,7 +180,8 @@
       'unique-filter': null,
       'bt-checkbox': { color: 'primary' },
       'invert': null,
-      'not-group': null
+      'not-group': null,
+      'readable-json': null
     },
 
     // standard operators in custom optgroups
@@ -199,10 +205,17 @@
       { type: 'is_empty' },
       { type: 'is_not_empty' },
       { type: 'is_null' },
-      { type: 'is_not_null' }
+      { type: 'is_not_null' },
+      { type: 'in_last_x_days' },
+      { type: 'not_in_last_x_days' }
     ],
 
     filters: [
+      {
+          id: 'lastOrderDate',
+          label: 'Last order date',
+          type: 'datetime'
+      },
       /*
        * string with separator
        */

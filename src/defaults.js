@@ -94,8 +94,8 @@ QueryBuilder.regional = {};
 QueryBuilder.OPERATORS = {
     equal:            { type: 'equal',            nb_inputs: 1, multiple: false, apply_to: ['string', 'number', 'datetime', 'boolean'] },
     not_equal:        { type: 'not_equal',        nb_inputs: 1, multiple: false, apply_to: ['string', 'number', 'datetime', 'boolean'] },
-    in:               { type: 'in',               nb_inputs: 1, multiple: true,  apply_to: ['string', 'number', 'datetime'] },
-    not_in:           { type: 'not_in',           nb_inputs: 1, multiple: true,  apply_to: ['string', 'number', 'datetime'] },
+    in:               { type: 'in',               nb_inputs: 1, multiple: true,  apply_to: ['string'] },
+    not_in:           { type: 'not_in',           nb_inputs: 1, multiple: true,  apply_to: ['string'] },
     less:             { type: 'less',             nb_inputs: 1, multiple: false, apply_to: ['number', 'datetime'] },
     less_or_equal:    { type: 'less_or_equal',    nb_inputs: 1, multiple: false, apply_to: ['number', 'datetime'] },
     greater:          { type: 'greater',          nb_inputs: 1, multiple: false, apply_to: ['number', 'datetime'] },
@@ -111,7 +111,9 @@ QueryBuilder.OPERATORS = {
     is_empty:         { type: 'is_empty',         nb_inputs: 0, multiple: false, apply_to: ['string'] },
     is_not_empty:     { type: 'is_not_empty',     nb_inputs: 0, multiple: false, apply_to: ['string'] },
     is_null:          { type: 'is_null',          nb_inputs: 0, multiple: false, apply_to: ['string', 'number', 'datetime', 'boolean'] },
-    is_not_null:      { type: 'is_not_null',      nb_inputs: 0, multiple: false, apply_to: ['string', 'number', 'datetime', 'boolean'] }
+    is_not_null:      { type: 'is_not_null',         nb_inputs: 0, multiple: false, apply_to: ['string', 'number', 'datetime', 'boolean'] },
+    in_last_x_days:   {type: 'in_last_x_days',       nb_inputs: 1, multiple: false, apply_to: ['datetime'], input_type: 'integer'},
+    not_in_last_x_days: {type: 'not_in_last_x_days', nb_inputs: 1, multiple: false, apply_to: ['datetime'], input_type: 'integer'}
 };
 
 /**
@@ -162,8 +164,6 @@ QueryBuilder.DEFAULTS = {
     operators: [
         'equal',
         'not_equal',
-        'in',
-        'not_in',
         'less',
         'less_or_equal',
         'greater',
@@ -178,8 +178,10 @@ QueryBuilder.DEFAULTS = {
         'not_ends_with',
         'is_empty',
         'is_not_empty',
-        'is_null',
-        'is_not_null'
+        'in_last_x_days',
+        'not_in_last_x_days',
+        'in',
+        'not_in'
     ],
 
     icons: {
