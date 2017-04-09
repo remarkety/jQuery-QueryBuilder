@@ -13,14 +13,14 @@
   },
 
   "operators": {
-    "equal": "equal",
-    "not_equal": "not equal",
+    "equal": "equal to",
+    "not_equal": "not equal to",
     "in": "in",
     "not_in": "not in",
-    "less": "less",
-    "less_or_equal": "less or equal",
-    "greater": "greater",
-    "greater_or_equal": "greater or equal",
+    "less": "less than",
+    "less_or_equal": "less or equal to",
+    "greater": "greater than",
+    "greater_or_equal": "greater or equal to",
     "between": "between",
     "not_between": "not between",
     "begins_with": "begins with",
@@ -33,8 +33,8 @@
     "is_not_empty": "is not empty",
     "is_null": "is null",
     "is_not_null": "is not null",
-    "in_last_x_days": "is within the last x days",
-    "not_in_last_x_days": "is not within the last x days"
+    "in_last_x_days": "is within the last ___ days",
+    "not_in_last_x_days": "is not within the last ___ days"
   },
 
   "errors": {
